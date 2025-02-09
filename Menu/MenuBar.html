@@ -6,7 +6,7 @@
       <a class="navbar-brand" href="/#!/create-user" ng-if="!isLoggedIn">Create User</a>
       
       <span class="navbar-text" ng-if="isLoggedIn">Welcome, {{ username }}</span>
-      <a ng-click="logout()" ng-if="isLoggedIn">Çıkış Yap</a>
+      <a href="#" ng-click="logout()" style="margin-left:10px" ng-if="isLoggedIn">Çıkış Yap</a>
     </form>
   </nav>
 </div>

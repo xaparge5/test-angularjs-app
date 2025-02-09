@@ -16,7 +16,7 @@ angular.module('myApp')
         $http.post(API_BASE_URL+'/add-user', userData)
         .then(function(response) {
             console.log('Başarıyla eklendi:', response.data);
-            alert('Kullanıcı eklendi!');
+            window.location.href = "/#!/login"
         })
         .catch(function(error) {
             console.error('Hata:', error);
