@@ -5,7 +5,7 @@ angular.module('myApp') // 'Home' yerine 'myApp' kullan!
 
     socket.onopen = function(event) {
         console.log('WebSocket bağlantısı açıldı:', event);
-        alert('WebSocket bağlantısı açıldı!');
+        console.log('WebSocket bağlantısı açıldı!')
     };
 
     socket.onmessage = function(event) {

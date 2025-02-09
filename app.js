@@ -18,6 +18,10 @@ app.config(function($routeProvider) {
             templateUrl: 'Identity/CreateUser/CreateUser.html',
             controller: 'CreateUserController'  
         })
+        .when('/login', {  
+            templateUrl: 'Identity/Login/Login.html',
+            controller: 'LoginController'  
+        })
         .otherwise({
             redirectTo: '/'
         });
