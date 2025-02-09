@@ -2,20 +2,22 @@
 <html ng-app="myApp">
 <head>
     <title>My AngularJS App</title>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+    
     <script src="app.js"></script>
     <script src="/Home/Home.js"></script>
     <script src="/Identity/CreateUser/CreateUser.js"></script>
     <script src="/Identity/Login/Login.js"></script>
+    <script src="/Services/Session/SessionService.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Navbar Menü -->
     <menubar></menubar>
-        
-    <!-- Sayfa içeriği buraya yüklenecek -->
+    
     <div ng-view></div> 
 
 </body>
