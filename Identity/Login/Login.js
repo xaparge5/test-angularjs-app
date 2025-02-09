@@ -4,6 +4,7 @@ angular.module('myApp')
         username: '',
         password: ''
     };
+    console.log(sessionStorage.user)
 
     $scope.login = function() {
         const userData = {
@@ -13,12 +14,12 @@ angular.module('myApp')
 
         $http.post('http://localhost:3000/login', userData)
         .then(function(response) {
-             // Oturumu başlat
-             console.log(response)
-             SessionService.startSession(response.username, response.id);
-             $scope.loggedIn = true;
-             $scope.user = SessionService.getSession();
-             console.log("*******"+SessionService.getSession())
+            debugger;
+            console.log("**************"+response.data);
+            $scope.loggedIn = true;
+            $scope.user =  JSON.stringify(response.data);
+            sessionStorage.user = JSON.stringify(response.data);
+            console.log(sessionStorage.user + "-------------");
         })
         .catch(function(error) {
             console.error('Hata:', error);

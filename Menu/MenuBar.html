@@ -1,9 +1,12 @@
-<div ng-app="MenuBar">
+<div ng-controller="MenuBarController">
   <nav class="navbar navbar-light bg-light justify-content-between">
-    <a class="navbar-brand" href="/">Home</a>
+    <a class="navbar-brand" href="/">Anasyf</a>
     <form class="form-inline">
-      <a class="navbar-brand" href="/#!/login">Login</a>
-      <a class="navbar-brand" href="/#!/create-user">Create User</a>
+      <a class="navbar-brand"  ng-if="!isLoggedIn"  href="/#!/login" ng-if="!isLoggedIn">Login</a>
+      <a class="navbar-brand" ng-if="!isLoggedIn" href="/#!/create-user" ng-if="!isLoggedIn">Create User</a>
+      
+      <span class="navbar-text" ng-if="isLoggedIn" style="margin-left:-20%">{{ username }}</span> 
+      <a  style="margin-left:20%" ng-if="isLoggedIn"  ng-click="logout()">Çıkış Yap</a>
     </form>
   </nav>
 </div>
