@@ -1,5 +1,9 @@
 angular.module('myApp')
 .controller('LoginController', function($scope, $http) {
+    if (sessionStorage.length > 0) {
+        window.location.href = "/";
+    }
+
     $scope.login = {
         username: '',
         password: ''
@@ -20,6 +24,7 @@ angular.module('myApp')
             $scope.user =  JSON.stringify(response.data);
             sessionStorage.user = JSON.stringify(response.data);
             console.log(sessionStorage.user + "-------------");
+            window.location.href = "/";
         })
         .catch(function(error) {
             console.error('Hata:', error);

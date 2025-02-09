@@ -1,10 +1,10 @@
-var app = angular.module('myApp', ['ngRoute']); // ngRoute modülünü dahil ediyoruz
+var app = angular.module('myApp', ['ngRoute']);
 
-// Menü bar direktifi
+
 angular.module('myApp').directive('menubar', function() {
     return {
         restrict: 'E',
-        templateUrl: 'Menu/MenuBar.html', // Menü bar'ı HTML'den alıyoruz
+        templateUrl: 'Menu/MenuBar.html', 
         controller: "MenuBarController"
     };
 });
