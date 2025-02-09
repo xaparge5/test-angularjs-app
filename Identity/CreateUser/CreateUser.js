@@ -10,5 +10,6 @@ app.controller('CreateUserController', function($scope) {
     $scope.createUser = function() {
         alert('User created: ' + $scope.user.username + ' (' + $scope.user.email + ')');
         // Burada kullanıcıyı kaydetme işlemleri yapılabilir
+        
     };
 });
