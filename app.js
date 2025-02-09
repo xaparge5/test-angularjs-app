@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute']).constant('API_BASE_URL', 'http://localhost:3000');
 
 
 angular.module('myApp').directive('menubar', function() {

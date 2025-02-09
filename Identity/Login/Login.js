@@ -1,5 +1,6 @@
 angular.module('myApp')
-.controller('LoginController', function($scope, $http) {
+.controller('LoginController', function($scope, $http,API_BASE_URL) {
+    debugger;
     if (sessionStorage.length > 0) {
         window.location.href = "/";
     }
@@ -16,7 +17,7 @@ angular.module('myApp')
             password: $scope.user.password
         };
 
-        $http.post('http://localhost:3000/login', userData)
+        $http.post(API_BASE_URL+'/login', userData)
         .then(function(response) {
             debugger;
             console.log("**************"+response.data);

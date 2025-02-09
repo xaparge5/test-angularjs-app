@@ -1,6 +1,5 @@
 angular.module('myApp')
 .controller('MenuBarController', function($scope, $http) {
-    debugger;
     if (sessionStorage.length > 0) {
         user = JSON.parse(sessionStorage.user)
         $scope.isLoggedIn = true;

@@ -1,5 +1,5 @@
 angular.module('myApp')
-.controller('CreateUserController', function($scope, $http) {
+.controller('CreateUserController', function($scope, $http,API_BASE_URL) {
     $scope.user = {
         username: '',
         email: '',
@@ -13,7 +13,7 @@ angular.module('myApp')
             password: $scope.user.password
         };
 
-        $http.post('http://localhost:3000/add-user', userData)
+        $http.post(API_BASE_URL+'/add-user', userData)
         .then(function(response) {
             console.log('Başarıyla eklendi:', response.data);
             alert('Kullanıcı eklendi!');
