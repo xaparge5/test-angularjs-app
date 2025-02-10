@@ -16,7 +16,14 @@ angular.module('myApp').controller('ProductController', function($scope, Product
                         { title: "Fiyat", data: "Price" },
                         { title: "Adet", data: "StockQuantity" },
                         {
-                            title: "İşlem",
+                            title: "Düzenle",
+                            data: null,
+                            render: function(data, type, row) {
+                                return `<button class="edit-btn" data-id="${row.id}">Düzenle</button>`;
+                            }
+                        },
+                        {
+                            title: "Sil",
                             data: null,
                             render: function(data, type, row) {
                                 return `<button class="delete-btn" data-id="${row.id}">Sil</button>`;
@@ -50,7 +57,7 @@ $('#search-results tbody').on('click', '.delete-btn', function() {
                         { title: "Fiyat", data: "Price" },
                         { title: "Adet", data: "StockQuantity" },
                         {
-                            title: "İşlem",
+                            title: "Sil",
                             data: null,
                             render: function(data, type, row) {
                                 return `<button class="delete-btn" data-id="${row.id}">Sil</button>`;
@@ -67,5 +74,11 @@ $('#search-results tbody').on('click', '.delete-btn', function() {
         alert("Ürün silinirken bir hata oluştu.");
     });
 });
+
+$('#search-results tbody').on('click', '.edit-btn', function() {
+    var productId = $(this).data('id');
+    window.location.href = "/#!/edit-product/"+productId;
+});
+
     $scope.loadProducts();
 });
