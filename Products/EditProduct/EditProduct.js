@@ -7,7 +7,6 @@ angular.module('myApp').controller('EditProductController', function($scope, $ro
         Price: ""
     };
 
-    // Ürün bilgilerini almak
     ProductService.getProduct(productId).then(function(response) {
         $scope.product = response.data;
         console.log("Ürün verisi başarıyla alındı:", $scope.product);
@@ -16,15 +15,13 @@ angular.module('myApp').controller('EditProductController', function($scope, $ro
         $scope.product = null;
     });
 
-    // Ürün düzenleme işlemi
     $scope.createProduct = function() {
-        // Ürünün verilerini formdan alıyoruz
         if ($scope.product.ProductName && $scope.product.StockQuantity && $scope.product.Price) {
             ProductService.updateProduct($scope.product)
                 .then(function(response) {
                     alert("Ürün başarıyla güncellendi!");
                     console.log(response);
-                    window.location.href = "/#!/products";  // Liste sayfasına yönlendir
+                    window.location.href = "/#!/products";  
                 })
                 .catch(function(error) {
                     alert("Ürün güncellenirken bir hata oluştu.");

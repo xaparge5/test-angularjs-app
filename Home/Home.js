@@ -1,4 +1,4 @@
-angular.module('myApp') // 'Home' yerine 'myApp' kullan!
+angular.module('myApp') 
 .controller('HomeController', function($scope) {
     
     const socket = new WebSocket('ws://localhost:8080'); 
