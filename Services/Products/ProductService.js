@@ -31,6 +31,11 @@ angular.module('myApp').service('ProductService', function($http, API_BASE_URL) 
     this.getProduct = function(productid) {
         return $http.get(API_BASE_URL + '/get-product/' + productid);  // URL parametresini kullanıyoruz
     };
+
+    this.updateProduct = function(product) {
+        debugger;
+        return $http.put(API_BASE_URL + '/update-product' , product);  // URL parametresini kullanıyoruz
+    };
 });
 
 
