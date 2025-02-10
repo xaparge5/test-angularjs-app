@@ -23,6 +23,14 @@ app.config(function($routeProvider) {
             templateUrl: 'Identity/Login/Login.html',
             controller: 'LoginController'  
         })
+        .when('/products', {  
+            templateUrl: 'Products/Product.html',
+            controller: 'ProductController'  
+        })
+        .when('/create-product', {  
+            templateUrl: 'Products/CreateProduct/CreateProduct.html',
+            controller: 'CreateProductController'  
+        })
         .otherwise({
             redirectTo: '/'
         });
