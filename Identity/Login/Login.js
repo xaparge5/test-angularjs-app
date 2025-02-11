@@ -1,6 +1,5 @@
 angular.module('myApp')
 .controller('LoginController', function($scope, $http,API_BASE_URL) {
-    debugger;
     if (sessionStorage.length > 0) {
         window.location.href = "/";
     }
@@ -20,12 +19,15 @@ angular.module('myApp')
         $http.post(API_BASE_URL+'/login', userData)
         .then(function(response) {
             debugger;
-            console.log("**************"+response.data);
-            $scope.loggedIn = true;
-            $scope.user =  JSON.stringify(response.data);
-            sessionStorage.user = JSON.stringify(response.data);
-            console.log(sessionStorage.user + "-------------");
-            window.location.href = "/";
+            if(response.data != false){
+                console.log("**************"+response.data);
+                $scope.loggedIn = true;
+                $scope.user =  JSON.stringify(response.data);
+                sessionStorage.user = JSON.stringify(response.data);
+                console.log(sessionStorage.user + "-------------");
+                window.location.href = "/";
+            }
+            
         })
         .catch(function(error) {
             console.error('Hata:', error);
